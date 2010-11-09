@@ -455,12 +455,12 @@
         <repository>
             <id>jboss-releases-repository</id>
             <name>JBoss Releases Repository</name>
-            <url>https://localhost:8081/nexus/service/local/staging/deploy/maven2/</url>
+            <url>http://localhost:8081/nexus/service/local/staging/deploy/maven2/</url>
         </repository>
         <snapshotRepository>
             <id>jboss-snapshots-repository</id>
             <name>JBoss Snapshots Repository</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
