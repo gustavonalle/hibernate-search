@@ -50,8 +50,8 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/hibernate/hibernate-search.git</connection>
-        <developerConnection>scm:git:git@github.com:hibernate/hibernate-search.git</developerConnection>
+        <connection>scm:git:git://github.com/gustavonalle/hibernate-search.git</connection>
+        <developerConnection>scm:git:git@github.com:gustavonalle/hibernate-search.git</developerConnection>
         <url>http://github.com/hibernate/hibernate-search</url>
     </scm>
 
@@ -455,7 +455,7 @@
         <repository>
             <id>jboss-releases-repository</id>
             <name>JBoss Releases Repository</name>
-            <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
+            <url>https://localhost:8081/nexus/service/local/staging/deploy/maven2/</url>
         </repository>
         <snapshotRepository>
             <id>jboss-snapshots-repository</id>
