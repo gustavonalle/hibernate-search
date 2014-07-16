@@ -34,11 +34,6 @@
             <outputDirectory>/org/hibernate/search/backend-jms/${hibernate.search.module.slot}</outputDirectory>
             <filtered>true</filtered>
         </file>
-        <file>
-            <source>${module.xml.basedir}/infinispan/lucene-directory/module.xml</source>
-            <outputDirectory>/org/infinispan/lucene-directory/${infinispanVersion}</outputDirectory>
-            <filtered>true</filtered>
-        </file>
     </files>
 
     <dependencySets>
@@ -87,11 +82,9 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>org/infinispan/lucene-directory/${infinispanVersion}</outputDirectory>
-            <useTransitiveFiltering>false</useTransitiveFiltering>
-            <unpack>false</unpack>
+            <unpack>true</unpack>
             <includes>
-                <include>org.infinispan:infinispan-lucene-directory</include>
+                <include>org.infinispan:infinispan-lucene-modules:zip:wildfly-8-dist</include>
             </includes>
         </dependencySet>
 

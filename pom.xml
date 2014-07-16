@@ -136,7 +136,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <slf4jVersion>1.6.4</slf4jVersion>
         <luceneVersion>4.8.1</luceneVersion>
-        <infinispanVersion>7.0.0.Alpha4</infinispanVersion>
+        <infinispanVersion>7.0.0-SNAPSHOT</infinispanVersion>
+        <infinispanLuceneVersion>1.0.0-SNAPSHOT</infinispanLuceneVersion>
         <jgroupsVersion>3.5.0.Beta9</jgroupsVersion>
         <hibernateVersion>4.3.5.Final</hibernateVersion>
         <hibernateCommonsAnnotationVersion>4.0.5.Final</hibernateCommonsAnnotationVersion>
@@ -400,7 +401,7 @@
             <dependency>
                 <groupId>org.infinispan</groupId>
                 <artifactId>infinispan-lucene-directory</artifactId>
-                <version>${infinispanVersion}</version>
+                <version>${infinispanLuceneVersion}</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>

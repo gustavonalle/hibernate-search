@@ -63,6 +63,13 @@
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-lucene-modules</artifactId>
+            <version>${infinispanLuceneVersion}</version>
+            <type>zip</type>
+            <classifier>wildfly-8-dist</classifier>
+        </dependency>
     </dependencies>
 
     <build>
