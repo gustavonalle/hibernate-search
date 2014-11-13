@@ -10,9 +10,7 @@ import org.hibernate.search.backend.spi.Work;
 import org.hibernate.search.backend.spi.WorkType;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -33,7 +31,8 @@ public class WorkLog {
 	private final RandomGenerator randomGenerator = RandomGenerator.withDefaults();
 
 	private volatile AtomicInteger addCounter, deleteCounter, updateCounter;
-	private final List<Integer> addedDocuments = new ArrayList<>();
+
+	private volatile Integer lastAddedDocumentId = null;
 
 	/**
 	 * Constructor
@@ -56,15 +55,8 @@ public class WorkLog {
 		}
 	}
 
-	private synchronized Integer getPreviouslyAddedId() {
-		if ( addedDocuments.isEmpty() ) {
-			return null;
-		}
-		if ( addedDocuments.size() == 1 ) {
-			return addedDocuments.get( 0 );
-		}
-		int idx = randomGenerator.randomIntNotZero( addedDocuments.size() ) - 1;
-		return addedDocuments.get( idx );
+	private Integer getPreviouslyAddedId() {
+		return lastAddedDocumentId;
 	}
 
 	private Work createAddWork() {
@@ -125,9 +117,7 @@ public class WorkLog {
 	public void workApplied(Work work) {
 		workLog.add( work );
 		if ( work.getType().equals( ADD ) ) {
-			synchronized ( this ) {
-				addedDocuments.add( (Integer) work.getId() );
-			}
+			lastAddedDocumentId = (Integer) work.getId();
 		}
 	}
 
